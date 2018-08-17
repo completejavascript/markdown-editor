@@ -44,7 +44,7 @@ export default class NavBar extends Component {
       <nav className="navbar">
         <div className="navbar-wrapper name">
           <h1 className="navbar-wrapper-name">
-            <a href="https://github.com/completejavascript/markdown-editor">Markdown Previewer</a>
+            <a href="https://github.com/completejavascript/markdown-editor">Markdown Editor</a>
           </h1>
         </div>
         <div className="navbar-wrapper">
