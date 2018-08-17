@@ -1,0 +1,348 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+:root {
+  --bold-color: rgba(0, 0, 0, .8);
+  --nav-background-color: #1e1e1e;
+  --nav-color: #b9b9b9;
+  --workspace-margin-top: 46px;
+  --transition-style: all 0.1s ease-in-out;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font: normal normal normal 1rem/1.6 Nunito Sans, Helvetica, Arial, sans-serif;
+  color: var(--bold-color);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-width: 320px;
+  background-color: var(--nav-background-color);
+  color: var(--nav-color);
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 102;
+}
+
+.navbar-wrapper {
+  padding: 4px 15px;
+}
+
+.navbar-wrapper.name {
+  padding: 0;
+}
+
+.navbar-wrapper-name {
+  display: none;
+}
+
+.navbar-wrapper-name a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar-wrapper-icon {
+  margin-left: 5px;
+  padding: 8px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  position: relative;
+  -webkit-transition: var(--transition-style);
+  -moz-transition: var(--transition-style);
+  transition: var(--transition-style);
+}
+
+.navbar-wrapper-icon:hover,
+.navbar-wrapper-icon.choosen {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, .2);
+}
+
+.navbar-wraper-select-theme {
+  background-color: var(--nav-background-color);
+  color: var(--nav-color);
+  cursor: pointer;
+  outline: none;
+  padding: 2px 4px;
+  border: 1px solid var(--nav-color);
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-transition: var(--transition-style);
+  -moz-transition: var(--transition-style);
+  transition: var(--transition-style);
+}
+
+.navbar-wraper-select-theme:hover {
+  background-color: rgba(255, 255, 255, .2);
+}
+
+.navbar-wraper-select-theme option {
+  background-color: var(--nav-background-color);
+	color: var(--nav-color);
+  -webkit-transition: var(--transition-style);
+  -moz-transition: var(--transition-style);
+  transition: var(--transition-style);
+}
+
+.workspace {
+  z-index: 100;
+  background-color: #eee;
+}
+
+.editor {
+  background-color: #fff;
+}
+
+.previewer {
+  background-color: #f3f3f3;
+  border-top: 1px solid #ddd;
+}
+
+.CodeMirror {
+  height: 300px;
+  font: normal normal normal 1rem/1.6 Lato, Helvetica Neue, Helvetica, sans-serif;
+}
+
+.editor.hide {
+  display: none;
+}
+
+.previewer.hide {
+  display: none;
+}
+
+.editor.center {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.editor.center .CodeMirror {
+  height: calc(100% - var(--workspace-margin-top))
+}
+
+.CodeMirror,
+.previewer-content {
+  padding: 15px;
+  margin-top: var(--workspace-margin-top);
+  width: 100%;
+  color: var(--bold-color);
+  font-weight: 400;
+}
+
+/* Custom Scrollbar */
+.CodeMirror-vscrollbar,
+.CodeMirror-hscrollbar {
+  outline: none;
+  border: none;
+}
+
+.CodeMirror-vscrollbar::-webkit-scrollbar,
+.previewer-content::-webkit-scrollbar {
+  width: 9px;
+}
+
+.CodeMirror-hscrollbar::-webkit-scrollbar,
+.previewer-content pre::-webkit-scrollbar {
+  height: 9px;
+}
+
+.CodeMirror-vscrollbar::-webkit-scrollbar-track,
+.CodeMirror-hscrollbar::-webkit-scrollbar-track,
+.previewer-content::-webkit-scrollbar-track,
+.previewer-content pre::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.CodeMirror-vscrollbar::-webkit-scrollbar-thumb,
+.CodeMirror-hscrollbar::-webkit-scrollbar-thumb,
+.previewer-content::-webkit-scrollbar-thumb,
+.previewer-content pre::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+}
+/* End of Custom Scrollbar */
+
+@media (min-width: 768px) {
+  .workspace {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+  }
+  .editor,
+  .previewer {
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    top: 0;
+  }
+  .editor {
+    left: 0;
+  }
+  .previewer {
+    right: 0;
+    border-left: 1px solid #ddd;
+  }
+  .editor.center {
+    width: 100%;
+    max-width: 992px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  .previewer.center {
+    width: 100%;
+    max-width: 992px;
+    right: 50%;
+    transform: translate(50%, 0);
+    border: none;
+  }
+  .CodeMirror,
+  .previewer-content {
+    height: calc(100% - var(--workspace-margin-top));
+  }
+  .previewer-content {
+    overflow-y: scroll;
+  }
+  .navbar-wrapper {
+    padding: 4px 25px;
+  }
+  .navbar-wrapper.name {
+    padding: 4px 25px;
+  }
+  .navbar-wrapper-name {
+    display: initial;
+  }
+  .navbar-wrapper-icon {
+    margin-left: 15px;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-wrapper-icon {
+    margin-left: 25px;
+  }
+}
+
+/* Customize HTML Previewer */
+
+.previewer-content h1 {
+  margin: 1.5em 0;
+}
+
+.previewer-content h2 {
+  margin: 1.4em 0;
+}
+
+.previewer-content h3 {
+  margin: 1.3em 0;
+}
+
+.previewer-content h4 {
+  margin: 1.2em 0;
+}
+
+.previewer-content h5 {
+  margin: 1.1em 0;
+}
+
+.previewer-content h6 {
+  margin: 1.05em 0;
+}
+
+.previewer-content h1,
+.previewer-content h2 {
+  margin-top: 0;
+  position: relative;
+}
+
+.previewer-content h1:after,
+.previewer-content h2:after {
+  position: absolute;
+  content: '';
+  height: 1px;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: #ddd;
+}
+
+.previewer-content code,
+.previewer-content pre {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-break: normal;
+  word-wrap: normal;
+  margin: 10px;
+  background-color: #e2e2e2;
+  padding: 2px 4px;
+}
+
+.previewer-content pre>code {
+  background-color: transparent;
+}
+
+.previewer-content pre {
+  display: block;
+  min-width: 290px;
+  overflow-x: scroll;
+}
+
+.previewer-content blockquote {
+  color: rgba(0, 0, 0, .5);
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  border-left: 5px solid rgba(0, 0, 0, .075);
+}
+
+.previewer-content table {
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.previewer-content thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+.previewer-content tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+.previewer-content td,
+.previewer-content th {
+  border: 1px solid #dcdcdc;
+  padding: 8px 12px;
+}
+
+.previewer-content a {
+  color: #0c93e4;
+}
+
+.previewer-content img {
+  max-width: 100%;
+}
+
+/* End Of Customize HTML Previewer */
