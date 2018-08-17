@@ -2,7 +2,7 @@
   "name": "markdown-editor",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://about.phamvanlam.com/markdown-editor/",
+  "homepage": "https://completejavascript.github.io/markdown-editor",
   "dependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
