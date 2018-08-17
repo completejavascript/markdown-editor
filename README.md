@@ -3,7 +3,7 @@ A very simple but useful Markdown Previewer and Markdown Editor with CodeMirror,
 
 # Preview
 
-  * [Markdown Editor](http://about.phamvanlam.com/markdown-editor/)
+  * [Markdown Editor](http://about.phamvanlam.com/markdown-editor/index.html)
 
 # Visit me
 
