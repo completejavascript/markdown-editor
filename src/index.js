@@ -5,7 +5,7 @@ import registerServiceWorker from './libs/registerServiceWorker';
 import './index.css';
 
 const defaultText =
-  `# Welcome to my React Markdown Previewer!
+  `# Welcome to my React Markdown Editor!
 
 ## This is a sub-heading...
 ### And here's some other cool stuff:
